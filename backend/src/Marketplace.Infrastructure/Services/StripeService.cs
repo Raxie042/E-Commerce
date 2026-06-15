@@ -54,6 +54,14 @@ public class StripeService : IStripeService
         return account.Id;
     }
 
+    public async Task<string> RefundPaymentAsync(string paymentIntentId)
+    {
+        var options = new RefundCreateOptions { PaymentIntent = paymentIntentId };
+        var service = new RefundService();
+        var refund = await service.CreateAsync(options);
+        return refund.Id;
+    }
+
     public async Task<string> CreateOnboardingLinkAsync(string accountId, string returnUrl, string refreshUrl)
     {
         var options = new AccountLinkCreateOptions
