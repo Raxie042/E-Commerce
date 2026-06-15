@@ -78,13 +78,13 @@ export default function OrderDetailPage() {
                     {item.productTitle} — {item.variantName}
                     <span className="text-gray-400"> ×{item.quantity}</span>
                   </span>
-                  <span className="font-medium">${item.subtotal.toFixed(2)}</span>
+                  <span className="font-medium">£{item.subtotal.toFixed(2)}</span>
                 </li>
               ))}
             </ul>
             <div className="border-t border-gray-100 mt-3 pt-2 flex justify-between text-sm text-gray-500">
               <span>Subtotal</span>
-              <span>${sub.subtotal.toFixed(2)}</span>
+              <span>£{sub.subtotal.toFixed(2)}</span>
             </div>
           </div>
         ))}
@@ -93,7 +93,7 @@ export default function OrderDetailPage() {
       <div className="bg-white rounded-xl border border-gray-100 p-5 mb-6">
         <div className="flex justify-between font-bold text-gray-900">
           <span>Total</span>
-          <span>${order.totalAmount.toFixed(2)}</span>
+          <span>£{order.totalAmount.toFixed(2)}</span>
         </div>
       </div>
 

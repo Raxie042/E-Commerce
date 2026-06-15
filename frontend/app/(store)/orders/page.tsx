@@ -65,7 +65,7 @@ export default function OrdersPage() {
                 </p>
               </div>
               <div className="text-right shrink-0">
-                <p className="font-bold text-gray-900">${o.totalAmount.toFixed(2)}</p>
+                <p className="font-bold text-gray-900">£{o.totalAmount.toFixed(2)}</p>
                 <span className={`inline-block mt-1 px-2 py-0.5 rounded-full text-xs font-medium ${STATUS_COLOR[o.status] ?? 'bg-gray-100 text-gray-600'}`}>
                   {o.status}
                 </span>

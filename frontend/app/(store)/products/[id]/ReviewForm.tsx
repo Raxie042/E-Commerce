@@ -28,7 +28,7 @@ export function ReviewForm({ productId }: Props) {
     <p className="text-sm text-green-600 font-medium">Review submitted — thank you!</p>
   );
 
-  async function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
+  async function handleSubmit(e: { preventDefault(): void }) {
     e.preventDefault();
     setSubmitting(true);
     setError(null);

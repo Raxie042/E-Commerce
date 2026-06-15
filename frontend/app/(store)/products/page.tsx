@@ -124,7 +124,7 @@ function ProductCard({ product: p }: { product: Product }) {
       <div className="p-3 flex flex-col gap-1">
         <p className="text-xs text-gray-400">{p.storeName}</p>
         <p className="text-sm font-medium text-gray-900 line-clamp-2 leading-snug">{p.title}</p>
-        <p className="text-sm font-bold text-indigo-600 mt-auto">${lowestPrice.toFixed(2)}</p>
+        <p className="text-sm font-bold text-indigo-600 mt-auto">£{lowestPrice.toFixed(2)}</p>
       </div>
     </Link>
   );

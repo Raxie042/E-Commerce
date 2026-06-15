@@ -26,8 +26,8 @@ export default function AdminDashboard() {
     { label: 'Sellers', value: stats.totalSellers.toLocaleString(), color: 'bg-purple-50 text-purple-700' },
     { label: 'Total Orders', value: stats.totalOrders.toLocaleString(), color: 'bg-yellow-50 text-yellow-700' },
     { label: 'Paid Orders', value: stats.paidOrders.toLocaleString(), color: 'bg-green-50 text-green-700' },
-    { label: 'Total Revenue', value: `$${stats.totalRevenue.toFixed(2)}`, color: 'bg-emerald-50 text-emerald-700' },
-    { label: 'Total Payouts', value: `$${stats.totalPayouts.toFixed(2)}`, color: 'bg-indigo-50 text-indigo-700' },
+    { label: 'Total Revenue', value: `£${stats.totalRevenue.toFixed(2)}`, color: 'bg-emerald-50 text-emerald-700' },
+    { label: 'Total Payouts', value: `£${stats.totalPayouts.toFixed(2)}`, color: 'bg-indigo-50 text-indigo-700' },
   ];
 
   return (
@@ -46,7 +46,7 @@ export default function AdminDashboard() {
         <p className="text-sm text-gray-500">
           Platform fee retained:{' '}
           <span className="font-bold text-gray-900">
-            ${(stats.totalRevenue - stats.totalPayouts).toFixed(2)}
+            £{(stats.totalRevenue - stats.totalPayouts).toFixed(2)}
           </span>
         </p>
       </div>

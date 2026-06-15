@@ -1,7 +1,6 @@
 'use client';
 
 import { useState } from 'react';
-import { useRouter } from 'next/navigation';
 import { loadStripe } from '@stripe/stripe-js';
 import { Elements } from '@stripe/react-stripe-js';
 import { useCart } from '@/contexts/CartContext';
@@ -27,10 +26,9 @@ interface AddressForm {
 export default function CheckoutPage() {
   const { user } = useAuth();
   const { cart } = useCart();
-  const router = useRouter();
 
   const [address, setAddress] = useState<AddressForm>({
-    line1: '', line2: '', city: '', region: '', postalCode: '', country: 'US',
+    line1: '', line2: '', city: '', region: '', postalCode: '', country: 'GB',
   });
   const [step, setStep] = useState<'address' | 'payment'>('address');
   const [checkoutData, setCheckoutData] = useState<CheckoutResponse | null>(null);
@@ -59,7 +57,7 @@ export default function CheckoutPage() {
     );
   }
 
-  async function handleAddressSubmit(e: React.FormEvent) {
+  async function handleAddressSubmit(e: { preventDefault(): void }) {
     e.preventDefault();
     setSubmitting(true);
     setError(null);
@@ -112,15 +110,15 @@ export default function CheckoutPage() {
             <div className="bg-white rounded-2xl border border-gray-100 p-6">
               <h2 className="text-base font-semibold text-gray-900 mb-5">Shipping address</h2>
               <form onSubmit={handleAddressSubmit} className="space-y-4">
-                {field('Address line 1', 'line1', true, '123 Main St')}
-                {field('Address line 2', 'line2', false, 'Apt 4B')}
+                {field('Address line 1', 'line1', true, '1 High Street')}
+                {field('Address line 2', 'line2', false, 'Flat 2')}
                 <div className="grid grid-cols-2 gap-3">
-                  {field('City', 'city', true, 'New York')}
-                  {field('State / Region', 'region', true, 'NY')}
+                  {field('City', 'city', true, 'London')}
+                  {field('County / Region', 'region', false, 'Greater London')}
                 </div>
                 <div className="grid grid-cols-2 gap-3">
-                  {field('Postal code', 'postalCode', true, '10001')}
-                  {field('Country', 'country', true, 'US')}
+                  {field('Postcode', 'postalCode', true, 'SW1A 1AA')}
+                  {field('Country', 'country', true, 'GB')}
                 </div>
 
                 {error && (
@@ -168,13 +166,13 @@ export default function CheckoutPage() {
                     {item.productTitle} — {item.variantName}
                     <span className="text-gray-400"> ×{item.quantity}</span>
                   </span>
-                  <span className="font-medium shrink-0">${item.subtotal.toFixed(2)}</span>
+                  <span className="font-medium shrink-0">£{item.subtotal.toFixed(2)}</span>
                 </li>
               ))}
             </ul>
             <div className="border-t border-gray-100 pt-3 flex justify-between font-bold text-gray-900">
               <span>Total</span>
-              <span>${cart.total.toFixed(2)}</span>
+              <span>£{cart.total.toFixed(2)}</span>
             </div>
           </div>
         </div>

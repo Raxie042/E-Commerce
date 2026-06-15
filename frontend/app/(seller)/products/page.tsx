@@ -82,7 +82,7 @@ export default function SellerProductsPage() {
                       </div>
                     </div>
                   </td>
-                  <td className="px-4 py-3 text-gray-700">${p.basePrice.toFixed(2)}</td>
+                  <td className="px-4 py-3 text-gray-700">£{p.basePrice.toFixed(2)}</td>
                   <td className="px-4 py-3 text-gray-500">{p.variants.length}</td>
                   <td className="px-4 py-3">
                     <span className={`inline-flex items-center rounded-full px-2.5 py-0.5 text-xs font-medium ${statusColor[p.status]}`}>

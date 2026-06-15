@@ -3,6 +3,7 @@ using Marketplace.Application.Services;
 using Marketplace.Infrastructure.Data;
 using Marketplace.Infrastructure.Services;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
+using Microsoft.AspNetCore.HttpOverrides;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.IdentityModel.Tokens;
 
@@ -64,8 +65,15 @@ if (!app.Environment.IsDevelopment())
     await db.Database.MigrateAsync();
 }
 
+app.UseForwardedHeaders(new ForwardedHeadersOptions
+{
+    ForwardedHeaders = ForwardedHeaders.XForwardedFor | ForwardedHeaders.XForwardedProto
+});
+
+if (app.Environment.IsDevelopment())
+    app.UseHttpsRedirection();
+
 app.UseCors("Frontend");
-app.UseHttpsRedirection();
 app.UseStaticFiles();
 app.UseAuthentication();
 app.UseAuthorization();

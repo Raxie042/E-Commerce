@@ -20,7 +20,7 @@ export function VariantSelector({ variants, basePrice }: Props) {
   if (variants.length === 0) {
     return (
       <div className="mt-4">
-        <p className="text-2xl font-bold text-gray-900 mb-4">${basePrice.toFixed(2)}</p>
+        <p className="text-2xl font-bold text-gray-900 mb-4">£{basePrice.toFixed(2)}</p>
         <p className="text-sm text-gray-500 mb-4">No variants available.</p>
       </div>
     );
@@ -28,7 +28,7 @@ export function VariantSelector({ variants, basePrice }: Props) {
 
   return (
     <div className="mt-4">
-      <p className="text-2xl font-bold text-gray-900 mb-4">${price.toFixed(2)}</p>
+      <p className="text-2xl font-bold text-gray-900 mb-4">£{price.toFixed(2)}</p>
 
       <div className="mb-5">
         <p className="text-sm font-medium text-gray-700 mb-2">Option</p>

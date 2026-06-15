@@ -92,9 +92,9 @@ export default function SellerOrdersPage() {
                   </p>
                 </div>
                 <div className="text-right shrink-0">
-                  <p className="font-bold text-gray-900">${so.subtotal.toFixed(2)}</p>
+                  <p className="font-bold text-gray-900">£{so.subtotal.toFixed(2)}</p>
                   <p className="text-xs text-green-600 mt-0.5">
-                    Payout: ${so.sellerPayout.toFixed(2)}
+                    Payout: £{so.sellerPayout.toFixed(2)}
                   </p>
                 </div>
               </Link>

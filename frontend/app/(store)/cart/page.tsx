@@ -68,7 +68,7 @@ export default function CartPage() {
                 {item.productTitle}
               </Link>
               <p className="text-xs text-gray-400 mt-0.5">{item.variantName} · {item.storeName}</p>
-              <p className="text-sm font-bold text-gray-900 mt-1">${item.unitPrice.toFixed(2)}</p>
+              <p className="text-sm font-bold text-gray-900 mt-1">£{item.unitPrice.toFixed(2)}</p>
             </div>
 
             <div className="flex flex-col items-end justify-between">
@@ -92,7 +92,7 @@ export default function CartPage() {
                   +
                 </button>
               </div>
-              <p className="text-sm font-bold text-indigo-600">${item.subtotal.toFixed(2)}</p>
+              <p className="text-sm font-bold text-indigo-600">£{item.subtotal.toFixed(2)}</p>
             </div>
           </div>
         ))}
@@ -101,11 +101,11 @@ export default function CartPage() {
       <div className="mt-6 bg-white rounded-xl border border-gray-100 p-5">
         <div className="flex justify-between text-sm text-gray-600 mb-2">
           <span>Subtotal ({cart.itemCount} {cart.itemCount === 1 ? 'item' : 'items'})</span>
-          <span className="font-medium">${cart.total.toFixed(2)}</span>
+          <span className="font-medium">£{cart.total.toFixed(2)}</span>
         </div>
         <div className="flex justify-between text-base font-bold text-gray-900 border-t border-gray-100 pt-3">
           <span>Total</span>
-          <span>${cart.total.toFixed(2)}</span>
+          <span>£{cart.total.toFixed(2)}</span>
         </div>
         <Link
           href="/checkout"

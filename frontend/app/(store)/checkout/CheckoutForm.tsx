@@ -1,7 +1,6 @@
 'use client';
 
 import { useState } from 'react';
-import { useRouter } from 'next/navigation';
 import {
   PaymentElement,
   useStripe,
@@ -15,11 +14,10 @@ interface Props {
 export function CheckoutForm({ orderId }: Props) {
   const stripe = useStripe();
   const elements = useElements();
-  const router = useRouter();
   const [error, setError] = useState<string | null>(null);
   const [processing, setProcessing] = useState(false);
 
-  async function handleSubmit(e: React.FormEvent) {
+  async function handleSubmit(e: { preventDefault(): void }) {
     e.preventDefault();
     if (!stripe || !elements) return;
 

@@ -59,7 +59,7 @@ export function ProductForm({ product }: Props) {
     }
   }
 
-  async function handleSubmit(e: React.FormEvent) {
+  async function handleSubmit(e: { preventDefault(): void }) {
     e.preventDefault();
     setError('');
     setSaving(true);
@@ -123,7 +123,7 @@ export function ProductForm({ product }: Props) {
 
         <div className="grid grid-cols-2 gap-4">
           <div>
-            <label className="block text-sm font-medium text-gray-700 mb-1">Base price ($)</label>
+            <label className="block text-sm font-medium text-gray-700 mb-1">Base price (£)</label>
             <input required type="number" min="0.01" step="0.01" value={basePrice}
               onChange={e => setBasePrice(e.target.value)}
               className="w-full rounded-lg border border-gray-300 px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-indigo-500" />

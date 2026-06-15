@@ -31,6 +31,8 @@ services:
       Stripe__WebhookSecret: ${STRIPE_WEBHOOK_SECRET}
       Stripe__PlatformFeePercent: ${PLATFORM_FEE_PERCENT:-10}
       AllowedOrigins: ${FRONTEND_URL}
+    volumes:
+      - uploads_data:/app/wwwroot/uploads
     depends_on:
       db:
         condition: service_healthy
@@ -61,3 +63,4 @@ services:
 
 volumes:
   postgres_data:
+  uploads_data:

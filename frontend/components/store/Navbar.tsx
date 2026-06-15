@@ -13,7 +13,7 @@ export function Navbar() {
   const searchParams = useSearchParams();
   const [query, setQuery] = useState(searchParams.get('search') ?? '');
 
-  function handleSearch(e: React.FormEvent<HTMLFormElement>) {
+  function handleSearch(e: { preventDefault(): void }) {
     e.preventDefault();
     const params = new URLSearchParams();
     if (query.trim()) params.set('search', query.trim());

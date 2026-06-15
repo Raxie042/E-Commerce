@@ -89,19 +89,19 @@ export default function SellerSubOrderPage() {
                 <p className="text-sm font-medium text-gray-900">{item.productTitle}</p>
                 <p className="text-xs text-gray-400">{item.variantName} × {item.quantity}</p>
               </div>
-              <p className="text-sm font-bold text-gray-900 shrink-0">${item.subtotal.toFixed(2)}</p>
+              <p className="text-sm font-bold text-gray-900 shrink-0">£{item.subtotal.toFixed(2)}</p>
             </li>
           ))}
         </ul>
         <div className="border-t border-gray-100 mt-3 pt-3 space-y-1 text-sm">
           <div className="flex justify-between text-gray-600">
-            <span>Subtotal</span><span>${subOrder.subtotal.toFixed(2)}</span>
+            <span>Subtotal</span><span>£{subOrder.subtotal.toFixed(2)}</span>
           </div>
           <div className="flex justify-between text-gray-400">
-            <span>Platform fee (10%)</span><span>-${subOrder.platformFee.toFixed(2)}</span>
+            <span>Platform fee (10%)</span><span>-£{subOrder.platformFee.toFixed(2)}</span>
           </div>
           <div className="flex justify-between font-bold text-gray-900 pt-1 border-t border-gray-100">
-            <span>Your payout</span><span className="text-green-600">${subOrder.sellerPayout.toFixed(2)}</span>
+            <span>Your payout</span><span className="text-green-600">£{subOrder.sellerPayout.toFixed(2)}</span>
           </div>
         </div>
       </div>

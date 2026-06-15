@@ -103,7 +103,7 @@ export default function AdminOrdersPage() {
                       {o.status}
                     </span>
                   </td>
-                  <td className="px-4 py-3 font-bold text-gray-900">${o.totalAmount.toFixed(2)}</td>
+                  <td className="px-4 py-3 font-bold text-gray-900">£{o.totalAmount.toFixed(2)}</td>
                   <td className="px-4 py-3 text-gray-500">{o.subOrderCount}</td>
                   <td className="px-4 py-3 text-gray-400">{new Date(o.createdAt).toLocaleDateString()}</td>
                   <td className="px-4 py-3">
