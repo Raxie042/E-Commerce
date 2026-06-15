@@ -1,0 +1,12 @@
+<Solution>
+  <Folder Name="/backend/" />
+  <Folder Name="/backend/src/">
+    <Project Path="backend/src/Marketplace.Api/Marketplace.Api.csproj" />
+    <Project Path="backend/src/Marketplace.Application/Marketplace.Application.csproj" />
+    <Project Path="backend/src/Marketplace.Domain/Marketplace.Domain.csproj" />
+    <Project Path="backend/src/Marketplace.Infrastructure/Marketplace.Infrastructure.csproj" />
+  </Folder>
+  <Folder Name="/backend/tests/">
+    <Project Path="backend/tests/Marketplace.Tests/Marketplace.Tests.csproj" />
+  </Folder>
+</Solution>
