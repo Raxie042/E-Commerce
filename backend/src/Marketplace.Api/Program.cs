@@ -40,6 +40,7 @@ builder.Services.AddScoped<ICartService, CartService>();
 builder.Services.AddScoped<IStripeService, StripeService>();
 builder.Services.AddScoped<IOrderService, OrderService>();
 builder.Services.AddScoped<IWebhookService, WebhookService>();
+builder.Services.AddScoped<IFulfillmentService, FulfillmentService>();
 
 builder.Services.AddHealthChecks()
     .AddNpgSql(builder.Configuration.GetConnectionString("DefaultConnection")!);
