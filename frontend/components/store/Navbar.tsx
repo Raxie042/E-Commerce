@@ -13,7 +13,7 @@ export function Navbar() {
   const searchParams = useSearchParams();
   const [query, setQuery] = useState(searchParams.get('search') ?? '');
 
-  function handleSearch(e: React.FormEvent) {
+  function handleSearch(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault();
     const params = new URLSearchParams();
     if (query.trim()) params.set('search', query.trim());
@@ -51,6 +51,10 @@ export function Navbar() {
 
           {user ? (
             <div className="flex items-center gap-2">
+              <Link href="/orders"
+                className="text-sm text-gray-600 hover:text-indigo-600">
+                Orders
+              </Link>
               {user.role === 'Seller' && (
                 <Link href="/seller/products"
                   className="text-sm text-gray-600 hover:text-indigo-600 font-medium">

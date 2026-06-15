@@ -25,7 +25,7 @@ export default function SellerLayout({ children }: { children: React.ReactNode }
         </p>
         <NavLink href="/seller/products">Products</NavLink>
         <NavLink href="/seller/orders">Orders</NavLink>
-        <NavLink href="/seller/settings">Settings</NavLink>
+        <NavLink href="/seller/stripe">Stripe Payouts</NavLink>
         <div className="mt-auto">
           <Link href="/" className="block text-sm text-gray-400 hover:text-white py-2">
             ← Storefront
